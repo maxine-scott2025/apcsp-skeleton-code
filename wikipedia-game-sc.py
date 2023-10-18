@@ -2,7 +2,7 @@ from queue import Queue
 import wikipediaapi
 import time
 
-user_agent = "MsOrret'sWikipediaGame/1.0 (orret.deborah@pusd.us)"
+user_agent = "Maxine'sWikipediaGame/1.0 (sc4725ma0811@pusd.us)"
 
 wiki_wiki = wikipediaapi.Wikipedia(user_agent, "en")
 
@@ -20,9 +20,19 @@ def wikipedia_game_solver(start_page, target_page):
     print('Working on it...')
     start_time = time.time()
   
+
+    visited = []
+    queue = Queue()
+    path = []
+
+    queue.put(start_page.title)
+
+    while not queue.empty():
+    # get from queue (queue.get())
     # FINISH THE CODE HERE
 
     end_time = time.time()
+    
     print("This algorithm took", end_time-start_time, "seconds to run!")
   
     return path
