@@ -18,18 +18,22 @@ def get_next_states(state):
     next_states = []
     same_side = []
 
-    for key in state:
-        # if state[key] ==
-            # append the key to same side list
+    for thing in state:
+       if state[thing] == state["person"] and thing != "person":
+            same_side.append[thing]
 
-    # loop through same side
-    # make a new state that is one move away with each thing on the same side
-    # check if that state is vaild
-    # if it is, append to next_states
+    for thing in same_side:
+        next_state = copy.deepcopy(state)
+        next_state[thing] = not state[thing]
+        next_state["person"] = not state["person"]
 
+        if isValid(next_state) == True:
+            next_states.append(next states)
+            just_person = copy.deepcopy(state)
+            just_person["person"] = not state["person"]
 
-
-
+    if isValid(just person) == True:
+    next_states.append(just_person)
 
 
     return next_states
