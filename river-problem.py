@@ -23,17 +23,18 @@ def get_next_states(state):
             same_side.append[thing]
 
     for thing in same_side:
-        next_state = copy.deepcopy(state)
-        next_state[thing] = not state[thing]
-        next_state["person"] = not state["person"]
+        next_states = copy.deepcopy(state)
+        next_states[thing] = not state[thing]
+        next_states["person"] = not state["person"]
 
-        if isValid(next_state) == True:
-            next_states.append(next states)
-            just_person = copy.deepcopy(state)
-            just_person["person"] = not state["person"]
+        if isValid(next_states) == True:
+            next_states.append(next_states)
+            
+    just_person = copy.deepcopy(state)
+    just_person["person"] = not state["person"]
 
-    if isValid(just person) == True:
-    next_states.append(just_person)
+    if isValid(just_person) == True:
+        next_states.append(just_person)
 
 
     return next_states
@@ -45,7 +46,7 @@ def dfs(current_state, win_state):
     if current_state == win_state:
         return True
     
-    next_states = get_next_states(current_states)
+    next_states = get_next_states(current_state)
     visited_states.append(current_state)
 
     for state in next_states:
